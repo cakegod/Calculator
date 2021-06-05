@@ -11,14 +11,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgba(112, 128, 144, 0.747)
+  background-color: #F1FAEE;
 }
 
-
 .calculator {
-  width: 400px;
-  height: 600px;
-  background-color: #393f44;
+  width: 350px;
+  height: 450px;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -28,36 +26,60 @@ body {
     "four five six minus"
     "one two three plus"
     "dot zero multiply enter";
-  border: 5px solid #393f44;
   border-radius: 3%;
-  grid-column-gap: 4px;
-  grid-row-gap: 4px;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+  border: 10px solid #457B9D;
+  padding: 2px;
 }
 
 button {
-  font-size: 20px;
+  font-size: 22px;
   font-weight: bold;
   border: 0;
-  color: #ffffff;
-  background-color: lightslategrey;
-  transition: all 0.2s;
+  color: #edf2f4;
+  background-color: #1D3557;
+  transition: all 0.1 s;
   border-radius: 6%;
 }
 
 button:hover {
-  background-color: transparent;
+  background-color: #457B9D;
+  
 }
 
 .display {
   grid-area: display;
-  background-color: lightslategrey;
+  background-color: #457B9D;
+  color: #edf2f4;
   border-radius: 5%;
   font-size: 30px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  
+  padding-right: 10px;
+  overflow: hidden ;
 }
+  @media screen and (max-width:360px) {
+    .calculator {
+      width: 250px;
+      height: 350px;  
+    }
+  }
+@media screen and (min-height: 1000px) {
+  .calculator {
+    width: 800px;
+      height: 900px; 
+  }
+button {
+  font-size: 60px;
+}
+.display {
+  font-size: 70px;
+}
+}
+
+
 .zero {
   grid-area: zero;
 }
@@ -108,5 +130,4 @@ button:hover {
 }
 .clear {
   grid-area: clear;
-  
 }
