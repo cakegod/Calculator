@@ -16,7 +16,9 @@ let num2 = "";
 // to listen to number buttons 
 numbers.forEach(numbers =>
     numbers.addEventListener("click", () => {
+
         if (operator == "") {
+            if (display.textContent == 0 && num1dot == false) { display.textContent = ""; };
             num1 += numbers.textContent;
             num1 = parseFloat(num1);
             return display.append(numbers.textContent);
@@ -25,7 +27,6 @@ numbers.forEach(numbers =>
             num2 += numbers.textContent;
         num2 = parseFloat(num2);
         return display.append(numbers.textContent);
-
     }
     ));
 
@@ -36,18 +37,16 @@ operations.forEach(operations =>
             operator = operations.textContent;
             return display.append(" " + operations.textContent + " ");
         } else if (num1 != "" && num2 != "") {
+
             operation(num1, num2, operator);
             operator = operations.textContent;
             display.append(" " + operations.textContent + " ");
-        } 
-
-
-
+        }
     }));
 
 // to clear the values
 clear.addEventListener("click", () => {
-    display.textContent = "";
+    display.textContent = "0";
     num1 = "";
     operator = "";
     num2 = "";
@@ -61,7 +60,7 @@ enter.addEventListener("click", () => operation(num1, num2, operator));
 
 dot.addEventListener("click", () => {
 
-    if (operator == "" && num1 != "" && num1dot == false) {
+    if (operator == "" && num1dot == false) {
         num1dot = true;
         num1 += dot.textContent;
         display.append(dot.textContent);
@@ -75,32 +74,24 @@ dot.addEventListener("click", () => {
 // to calculate the values
 function plus(a, b) {
     result = a + b;
-    operator = "";
-    num1 = result;
-    num2 = "";
-    display.textContent = result;
-    num2dot = false;
+    clearOperation();
 }
 function minus(a, b) {
     result = a - b;
-    operator = "";
-    num1 = result;
-    num2 = "";
-    display.textContent = result;
-    num2dot = false;
+    clearOperation();
 }
 function multiply(a, b) {
     result = a * b;
-    result = Math.round(result * 1000) / 1000;
-    operator = "";
-    num1 = result;
-    num2 = "";
-    display.textContent = result;
-    num2dot = false;
+    clearOperation();
 }
 function divide(a, b) {
     result = a / b;
-    result = Math.round(result * 1000) / 1000;
+    clearOperation();
+
+}
+
+function clearOperation() {
+    result = Math.round(result * 10000) / 10000;
     operator = "";
     num1 = result;
     num2 = "";

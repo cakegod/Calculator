@@ -11,7 +11,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #F1FAEE;
+  background-color: #f1faee;
 }
 
 .calculator {
@@ -29,7 +29,7 @@ body {
   border-radius: 3%;
   grid-column-gap: 2px;
   grid-row-gap: 2px;
-  border: 10px solid #457B9D;
+  border: 10px solid #457b9d;
   padding: 2px;
 }
 
@@ -38,47 +38,45 @@ button {
   font-weight: bold;
   border: 0;
   color: #edf2f4;
-  background-color: #1D3557;
+  background-color: #1d3557;
   transition: all 0.1 s;
   border-radius: 6%;
 }
 
 button:hover {
-  background-color: #457B9D;
-  
+  background-color: #457b9d;
 }
 
 .display {
   grid-area: display;
-  background-color: #457B9D;
+  background-color: #457b9d;
   color: #edf2f4;
   border-radius: 5%;
-  font-size: 30px;
+  font-size: 28px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
   padding-right: 10px;
-  overflow: hidden ;
+  overflow: hidden;
 }
-  @media screen and (max-width:360px) {
-    .calculator {
-      width: 250px;
-      height: 350px;  
-    }
+@media screen and (max-width: 360px) {
+  .calculator {
+    width: 250px;
+    height: 350px;
   }
+}
 @media screen and (min-height: 1000px) {
   .calculator {
     width: 800px;
-      height: 900px; 
+    height: 900px;
   }
-button {
-  font-size: 60px;
+  button {
+    font-size: 60px;
+  }
+  .display {
+    font-size: 70px;
+  }
 }
-.display {
-  font-size: 70px;
-}
-}
-
 
 .zero {
   grid-area: zero;
